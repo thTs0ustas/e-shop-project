@@ -42,29 +42,29 @@ const SHOP_DATA = [
          {
             id: 6,
             name: 'Palm Tree Cap',
-            // imageUrl: 'https://i.ibb.co/rKBDvJX/palm-tree-cap.png',
-            imageUrl: "/images/shop-img/hats/palm-tree-cap.png",
+            imageUrl: 'https://i.ibb.co/rKBDvJX/palm-tree-cap.png',
+            // imageUrl: "/images/shop-img/hats/palm-tree-cap.png",
             price: 14
          },
          {
             id: 7,
             name: 'Red Beanie',
-            // imageUrl: 'https://i.ibb.co/bLB646Z/red-beanie.png',
-            imageUrl: "/images/shop-img/hats/red-beanie.png",
+            imageUrl: 'https://i.ibb.co/bLB646Z/red-beanie.png',
+            // imageUrl: "/images/shop-img/hats/red-beanie.png",
             price: 18
          },
          {
             id: 8,
             name: 'Wolf Cap',
-            // imageUrl: 'https://i.ibb.co/1f2nWMM/wolf-cap.png',
-            imageUrl: "/images/shop-img/hats/wolf-cap.png",
+            imageUrl: 'https://i.ibb.co/1f2nWMM/wolf-cap.png',
+            // imageUrl: "/images/shop-img/hats/wolf-cap.png",
             price: 14
          },
          {
             id: 9,
             name: 'Blue Snapback',
-            // imageUrl: 'https://i.ibb.co/X2VJP2W/blue-snapback.png',
-            imageUrl: "/images/shop-img/hats/blue-snapback.png",
+            imageUrl: 'https://i.ibb.co/X2VJP2W/blue-snapback.png',
+            // imageUrl: "/images/shop-img/hats/blue-snapback.png",
             price: 16
          }
       ]

@@ -4,10 +4,12 @@ import {CollectionPreview} from "../../components/PreviewCollection/PreviewColle
 
 export const ShopPage = () => {
    const [collections, setCollections] = useState(SHOP_DATA)
+
    return (
       <div className={'shop-page'}>
-         {collections.map(({id, ...otherProps}) =>
-               <CollectionPreview key={id} {...otherProps}/>)}
+         {collections.map(({id, ...otherPreviewProps}) =>
+               (<CollectionPreview key={id} {...otherPreviewProps}
+               />))}
       </div>)
 
 }

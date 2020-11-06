@@ -1,13 +1,16 @@
 import React from "react";
-import './PreviewCollection.sass'
+import {CollectionItem} from "../collectionItem";
+import './PreviewCollection.scss'
 
-export const CollectionPreview = ({title, items}) => (
+export const CollectionPreview = ({...props}) => (
+
    <div className={'collection-preview'}>
-      <h1 className={'title'}>{title.toUpperCase()}</h1>
+      <h1 className={'title'}>{props.title.toUpperCase()}</h1>
       <div className={'preview'}>
-         {items
-            .filter((_, idx) => idx < 4)
-            .map(item => <div key={item.id}>{item.name}</div>)
+         {props.items
+            .filter((item, idx) => idx < 4)
+            .map(({id, ...otherProps}) =>
+               (<CollectionItem key={id} {...otherProps}/>))
          }
       </div>
    </div>
