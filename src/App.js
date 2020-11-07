@@ -3,18 +3,26 @@ import {Route, Switch} from 'react-router-dom'
 
 import "./App.css";
 
-import {HomePage,SignInAndSignUp,ShopPage} from "./pages";
+import {HomePage, SignInAndSignUp, ShopPage} from "./pages";
 import {Header} from "./components";
-import {auth} from "./firebase/firebase.utils";
+import {auth, createUserProfileDocument} from "./firebase/firebase.utils";
 
 function App() {
-   const [currentUser, setCurrentUser] = useState(null)
+   const [currentUser, setCurrentUser] = useState({})
 
    useEffect(() => {
-      const unsubscribe = auth.onAuthStateChanged(user =>
-         setCurrentUser(user))
-      return () => unsubscribe()
+      const unsubscribe = auth.onAuthStateChanged(async userAuth => {
+         if (userAuth) {
+            const userRef = await createUserProfileDocument(userAuth)
+            userRef.onSnapshot(snapshot => {
+               setCurrentUser({id: snapshot.id, ...snapshot.data()})
+            })
+         }
+         setCurrentUser(userAuth)
+         return () => unsubscribe()
+      })
    }, [])
+   console.log(currentUser)
 
 
    return (
