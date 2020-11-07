@@ -3,10 +3,8 @@ import {Route, Switch} from 'react-router-dom'
 
 import "./App.css";
 
-import {ShopPage} from "./pages/shop";
-import HomePage from "./pages/homepage/HomepageComponent";
-import {Header} from "./components/header";
-import {SignInAndSignUp} from "./pages/signInAndSignUp";
+import {HomePage,SignInAndSignUp,ShopPage} from "./pages";
+import {Header} from "./components";
 import {auth} from "./firebase/firebase.utils";
 
 function App() {
@@ -16,7 +14,7 @@ function App() {
       const unsubscribe = auth.onAuthStateChanged(user =>
          setCurrentUser(user))
       return () => unsubscribe()
-   },[])
+   }, [])
 
 
    return (
@@ -29,8 +27,8 @@ function App() {
             <Route path={'/shop'}>
                <ShopPage/>
             </Route><Route path={'/signin'}>
-               <SignInAndSignUp/>
-            </Route>
+            <SignInAndSignUp/>
+         </Route>
          </Switch>
       </div>
    );

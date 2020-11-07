@@ -1,6 +1,6 @@
 import React from "react";
 import "./homepageComponent.scss";
-import {Directory} from "../../components/directory/DirectoryComponent";
+import {Directory} from "../../components";
 
 const HomePage = () => {
 
@@ -11,4 +11,4 @@ const HomePage = () => {
    );
 };
 
-export default HomePage;
+export {HomePage};
