@@ -1,5 +1,5 @@
-import React from "react";
-import { Switch, Route } from 'react-router-dom'
+import React, {useEffect, useState} from "react";
+import {Route, Switch} from 'react-router-dom'
 
 import "./App.css";
 
@@ -7,11 +7,21 @@ import {ShopPage} from "./pages/shop";
 import HomePage from "./pages/homepage/HomepageComponent";
 import {Header} from "./components/header";
 import {SignInAndSignUp} from "./pages/signInAndSignUp";
+import {auth} from "./firebase/firebase.utils";
 
 function App() {
+   const [currentUser, setCurrentUser] = useState(null)
+
+   useEffect(() => {
+      const unsubscribe = auth.onAuthStateChanged(user =>
+         setCurrentUser(user))
+      return () => unsubscribe()
+   },[])
+
+
    return (
       <div>
-         <Header/>
+         <Header currentUser={currentUser}/>
          <Switch>
             <Route exact path={'/'}>
                <HomePage/>
