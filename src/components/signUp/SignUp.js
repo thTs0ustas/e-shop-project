@@ -20,8 +20,6 @@ export const SignUp = () => {
 
    const handleSubmit = async event => {
       event.preventDefault()
-      const {displayName, email, password, confirmPassword} = signUpState
-
       if (password !== confirmPassword) {
          alert("passwords don't match")
          return
