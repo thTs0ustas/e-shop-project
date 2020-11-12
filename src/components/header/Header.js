@@ -8,9 +8,10 @@ import {CartIcon} from "../cartIcon";
 import {CartDropdown} from "../cartDropdown";
 
 import './header.scss'
+import shallowEqual from "react-redux/lib/utils/shallowEqual";
 
 export const Header = () => {
-	 const currentUser = useSelector(({user}) => user.currentUser)
+	 const currentUser = useSelector(({user}) => user.currentUser,shallowEqual)
 	 const hidden = useSelector(({cart}) => cart.hidden)
 
 	 return (
