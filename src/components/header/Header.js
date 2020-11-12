@@ -11,10 +11,11 @@ import './header.scss'
 
 export const Header = () => {
 	 const currentUser = useSelector(({user}) => user.currentUser)
-	 const hidden = useSelector(({cart})=>cart.hidden)
+	 const hidden = useSelector(({cart}) => cart.hidden)
 
 	 return (
 			<div className={'header'}>
+
 				 <Link to={'/'} className={'logo-container'}>
 						<Logo className={'logo'}/>
 				 </Link>
@@ -26,16 +27,22 @@ export const Header = () => {
 							 CONTACT
 						</Link>
 						{currentUser ?
-							 <div className={'option'} onClick={() => auth.signOut()}>
+							 <div
+									className={'option'}
+									onClick={() => auth.signOut()}
+							 >
 									SIGN OUT
 							 </div> :
-							 <Link className={'option'} to={'/signin'}>
+							 <Link
+									className={'option'}
+									to={'/signin'}
+							 >
 									SIGN IN
 							 </Link>
 						}
 						<CartIcon/>
 				 </div>
-				 {!hidden?<CartDropdown/>:null}
+				 {!hidden ? <CartDropdown/> : null}
 			</div>
 	 )
 }
