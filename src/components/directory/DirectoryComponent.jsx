@@ -1,11 +1,12 @@
-import React, {useState} from "react";
+import React from "react";
 import {MenuItem} from "../menuItem";
 import "./DirectoryComponent.scss";
-import SECTIONS_DATA from "../../pages/homepage/MENU_ITEMS";
+import {useSelector} from "react-redux";
+import {selectDirectorySection} from "../../redux/directory/directorySelectors";
 
 export const Directory = () => {
 
-	const [sections] = useState(SECTIONS_DATA)
+	const sections = useSelector(state => selectDirectorySection(state))
 
 	return (
 		<div className="directory-menu">

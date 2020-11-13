@@ -1,4 +1,4 @@
-import React from "react";
+
 import {selectCurrentUser, setCurrentUser} from "./redux/user";
 import {useEffect} from "react";
 import {auth, createUserProfileDocument} from "./firebase/firebase.utils";
