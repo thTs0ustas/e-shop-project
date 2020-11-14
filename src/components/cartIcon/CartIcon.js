@@ -1,25 +1,23 @@
 import React from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {toggleCartHidden} from "../../redux/cart";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleCartHidden } from "../../redux/cart";
 
-import './cartIcon.scss'
+import "./cartIcon.scss";
 
-import {ReactComponent as ShoppingIcon} from '../../assets/shopping-bag.svg'
+import { ReactComponent as ShoppingIcon } from "../../assets/shopping-bag.svg";
 import { selectCartItemsCounts } from "../../redux/cart/cartSelectors";
 
 export const CartIcon = () => {
+  const dispatchHidden = useDispatch();
+  const itemCounts = useSelector((state) => selectCartItemsCounts(state));
 
-	 const dispatchHidden = useDispatch()
-	 const itemCounts = useSelector(state=>
-			selectCartItemsCounts(state))
-
-
-	 return (
-			<div
-				 className={'cart-icon'}
-				 onClick={() => dispatchHidden(toggleCartHidden())}
-			>
-				 <ShoppingIcon className={'shopping-icon'}/>
-				 <span className={'item-count'}>{itemCounts}</span>
-			</div>)
-}
+  return (
+    <div
+      className={"cart-icon"}
+      onClick={() => dispatchHidden(toggleCartHidden())}
+    >
+      <ShoppingIcon className={"shopping-icon"} />
+      <span className={"item-count"}>{itemCounts}</span>
+    </div>
+  );
+};

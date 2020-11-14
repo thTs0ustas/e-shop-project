@@ -1,9 +1,8 @@
 import { createSelector } from "reselect";
 
-const selectUsers = state => state.user
+const selectUsers = (state) => state.user;
 
 export const selectCurrentUser = createSelector(
-	 [selectUsers],
-	 users => users.currentUser
-)
-
+  [selectUsers],
+  (users) => users.currentUser
+);
