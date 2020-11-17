@@ -53,9 +53,7 @@ export const SignUp = () => {
           onChange={(event) => handleChange(event)}
           label={"Display Name"}
           required
-        >
-          {" "}
-        </FormInput>
+        />
         <FormInput
           type={"email"}
           name={"email"}
@@ -63,9 +61,7 @@ export const SignUp = () => {
           onChange={handleChange}
           label={"Email"}
           required
-        >
-          {" "}
-        </FormInput>
+        />
         <FormInput
           type={"password"}
           name={"password"}
@@ -73,9 +69,7 @@ export const SignUp = () => {
           onChange={handleChange}
           label={"Password"}
           required
-        >
-          {" "}
-        </FormInput>
+        />
         <FormInput
           type={"password"}
           name={"confirmPassword"}
@@ -83,9 +77,7 @@ export const SignUp = () => {
           onChange={handleChange}
           label={"Confirm Password"}
           required
-        >
-          {" "}
-        </FormInput>
+        />
         <CustomButton type={"submit"}>SIGN UP</CustomButton>
       </form>
     </div>
