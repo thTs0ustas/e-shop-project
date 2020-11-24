@@ -1,45 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { FormInput } from "../formInput";
 import { CustomButton } from "../customButton";
-import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
 
 import "./signUp.scss";
 
-const initialState = {
-  displayName: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
-};
+import useSignUp from "./useSignUp";
 
 export const SignUp = () => {
-  const [signUpState, setSignUpState] = useState(initialState);
+  const { signUpState, handleSubmit, handleChange } = useSignUp();
   const { displayName, email, password, confirmPassword } = signUpState;
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    if (password !== confirmPassword) {
-      alert("passwords don't match");
-      return;
-    }
-
-    try {
-      const { user } = await auth.createUserWithEmailAndPassword(
-        email,
-        password
-      );
-      await createUserProfileDocument(user, { displayName });
-      setSignUpState(initialState);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setSignUpState((prevState) => ({ ...prevState, [name]: value }));
-  };
 
   return (
     <div className={"sign-up"}>
