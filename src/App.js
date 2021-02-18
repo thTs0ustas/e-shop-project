@@ -4,10 +4,6 @@ import { Redirect, Route, Switch } from "react-router-dom";
 
 import "./App.css";
 
-// import {auth, createUserProfileDocument} from "./firebase/firebase.utils";
-// import {selectCurrentUser, setCurrentUser} from "./redux/user";
-// import {useDispatch, useSelector} from "react-redux";
-
 import { CheckoutPage, HomePage, ShopPage, SignInAndSignUp } from "./pages";
 import { Header } from "./components";
 import { useApp } from "./useApp";
