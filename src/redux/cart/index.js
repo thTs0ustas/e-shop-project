@@ -1,4 +1,4 @@
-export { cartReducer } from "./cartReducer";
+// export { cartReducer } from "./cartReducer";
 export { toggleCartHidden } from "./cartAction";
 export {
   selectCartItems,

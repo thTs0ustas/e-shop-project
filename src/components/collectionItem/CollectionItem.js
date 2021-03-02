@@ -4,7 +4,7 @@ import "./collectionItem.scss";
 
 import { useDispatch } from "react-redux";
 import { CustomButton } from "../customButton";
-import { addItem } from "../../redux/cart/cartAction";
+import { addItem } from "../../redux/cart/cartReducer";
 
 export const CollectionItem = ({ item }) => {
   const newItemDispatch = useDispatch();

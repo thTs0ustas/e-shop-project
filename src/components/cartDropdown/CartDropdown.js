@@ -5,8 +5,9 @@ import "./cartDropdown.scss";
 import { CustomButton } from "../customButton";
 import { CartItem } from "../cartItem";
 import { useDispatch, useSelector } from "react-redux";
-import { selectCartItems, toggleCartHidden } from "../../redux/cart";
+import { toggleCartHidden } from "../../redux/cart/cartReducer";
 import { useHistory } from "react-router-dom";
+import { selectCartItems } from "../../redux/cart";
 
 export const CartDropdown = () => {
   const cartItems = useSelector((state) => selectCartItems(state));

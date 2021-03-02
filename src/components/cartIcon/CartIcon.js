@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleCartHidden } from "../../redux/cart";
+import { toggleCartHidden } from "../../redux/cart/cartReducer";
 
 import "./cartIcon.scss";
 
